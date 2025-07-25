@@ -2,7 +2,8 @@
 
 This is a simple example of how to use Capacitor with Next.js. It demonstrates how to set up a Next.js application that can be built and run as a mobile app using Capacitor.
 
-<img width="1512" height="892" alt="Screenshot 2025-07-25 at 1 14 32 AM" src="https://github.com/user-attachments/assets/7b608d7f-365c-4b44-b086-5f306d94e437" />
+<img width="1900" height="916" alt="Screenshot 2025-07-25 at 12 27 06 PM" src="https://github.com/user-attachments/assets/2080696b-0e54-45b2-9bac-c9811f8c0a08" />
+
 
 
 ### How to run the example
