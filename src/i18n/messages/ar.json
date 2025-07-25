@@ -1,4 +1,6 @@
 {
   "greeting": "مرحبا سليم",
-  "change_locale": "تغيير اللغة"
+  "current_language": "اللغة الحالية: {locale}",
+  "change_locale": "تغيير اللغة",
+  "client_component": "مكون العميل"
 }

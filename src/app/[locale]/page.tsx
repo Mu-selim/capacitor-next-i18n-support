@@ -1,6 +1,9 @@
+import Image from "next/image";
+import Link from "next/link";
+
 import { getTranslations } from "@/i18n";
 import { ChangeLang } from "@/component/changeLang";
-import Image from "next/image";
+
 import next from "@/assets/next.svg";
 import capacitorjs from "@/assets/capacitorjs.svg";
 
@@ -13,9 +16,6 @@ const Page = async ({ params }: PageProps) => {
   const t = await getTranslations({ locale: localeParams.locale });
 
   return (
-    // <div className="h-screen items-center justify-center bg-red-400">
-    //   {t("greeting")}
-    // </div>
     <div className="grid items-center justify-items-center min-h-screen px-4">
       <div className="flex flex-col items-center justify-center gap-4">
         <div className="flex items-center justify-center gap-8 flex-wrap">
@@ -29,6 +29,17 @@ const Page = async ({ params }: PageProps) => {
         </div>
         <h1 className="text-2xl font-bold">{t("greeting")}</h1>
         <ChangeLang />
+        <p>
+          {t("current_language", {
+            locale: localeParams.locale.toUpperCase(),
+          })}
+        </p>
+        <Link
+          href={`/${localeParams.locale}/client`}
+          className="text-blue-500 hover:underline"
+        >
+          /client
+        </Link>
       </div>
     </div>
   );

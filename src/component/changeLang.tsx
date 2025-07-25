@@ -1,15 +1,17 @@
 "use client";
 import { useLocale, useTranslations } from "next-intl";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 export const ChangeLang = () => {
   const t = useTranslations();
   const router = useRouter();
   const locale = useLocale();
+  const pathname = usePathname();
+  const pathWithoutLocale = pathname.replace(`/${locale}`, '');
 
   const handleChangeLocale = () => {
     const newLocale = locale === 'ar' ? 'en' : 'ar';
-    router.push(`/${newLocale}`);
+    router.push(`/${newLocale}${pathWithoutLocale}`);
   };
 
   return (

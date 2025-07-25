@@ -1,4 +1,6 @@
 {
   "greeting": "Hello Selim",
-  "change_locale": "Change Language"
+  "current_language": "Current Language: {locale}",
+  "change_locale": "Change Language",
+  "client_component": "Client Component"
 }
