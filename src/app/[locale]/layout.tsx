@@ -23,11 +23,14 @@ export default async function RootLayout({
   params,
 }: RootLayoutProps) {
   const localeParams = await params;
-  const messages = await getMessages(localeParams.locale);
+  const locale = localeParams.locale;
+  const messages = await getMessages(locale);
+
+  const dir = locale === "ar" ? "rtl" : "ltr";
   return (
-    <html lang={localeParams.locale}>
+    <html lang={locale} dir={dir}>
       <body>
-        <Providers messages={messages} locale={localeParams.locale}>
+        <Providers messages={messages} locale={locale}>
           {children}
         </Providers>
       </body>
