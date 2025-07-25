@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Capacitor + Next.js
 
-## Getting Started
+This is a simple example of how to use Capacitor with Next.js. It demonstrates how to set up a Next.js application that can be built and run as a mobile app using Capacitor.
 
-First, run the development server:
+### How to run the example
+
+1. install dependencies
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. build the Next.js app
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+pnpm static
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. sync the Capacitor project
 
-## Learn More
+```bash
+npx cap sync
+```
 
-To learn more about Next.js, take a look at the following resources:
+4. run the app on a mobile device or emulator
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npx cap run ios
+npx cap run android
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4. open the app in a web browser
 
-## Deploy on Vercel
+```bash
+pnpm dev
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Notes
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- If the `Android` build failed, the common reason is that you need java 21.
+- This example uses Capacitor to create a mobile app from a Next.js application.
+- The Next.js app is built as a static site and then served by Capacitor.
+- The `pnpm static` command builds the Next.js app and outputs it to the `out` directory.
+- The example shows case of internationalization (i18n) with Next.js, where the app supports multiple languages.
+- the example supports both client and server components, allowing for a rich user experience.
